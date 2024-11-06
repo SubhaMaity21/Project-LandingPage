@@ -6,16 +6,21 @@
     <title>Gym</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utils.css">
-    
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
 </head>
 <body>
   <main class="min-h-screen  ">
+   
     <div id="transitionImage" class="transition-image" style="display:none;">
       <img src="./images/dumbbell-7610150.svg" alt="Transition Image">
   </div>
     <div class="container mx-auto">
     <header>
- <img src="./images/pexels-lamiko-3616733.jpg" alt="">
+      <div class="menu">
+        <img src="./images/menu-icon-8.png" class="menu-icon" alt="menu" width="50" height="50">
+    </div>
+ <!-- <img src="./images/pexels-lamiko-3616733.jpg" alt=""> -->
        
         <nav class="flex justify-between">
 
@@ -25,31 +30,41 @@
                 <li>About</li>
                 <li>Services</li>
                 <li>Contact Us</li>
-                <li><button class="btn">Join Now</button></li>
+                <button class="btn">Join Now</button>
             </ul>
         </nav>
     </header>
-   
+        
+    <section class="section0">
+      <ul class="navbar flex flex-col item-center">
+        <!-- <div class="exit">
+          <img src="images/cross-icon-29.jpg" width="40px" height="40px" alt="">
+        </div> -->
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Contact Us</li>
+        <button class="btn">Join Now</button>
+    </ul>
+    </section>
     
-        <section class="section1 section">
+        <section class="section1 con1 section">
           <video class="video-bg" autoplay muted loop playsinline controls="false">
             <source src="./images/4367572-hd_1920_1080_30fps.mp4" type="video/mp4">
 
           </video>
             <div class="flex ">
                 <div class="top-left flex flex-col justify-center  px-2 ">
-                    <div class="text-center"><img class="margin-top" src="fitness-training-311490_1920.png" alt=""></div>
+                    <div class="text-center"><img class="margin-top" src="./images/fitness-training-311490_1920.png" alt=""></div>
                     
                     <h1 class="my-1 text-center ">The best Gym is here</h1>
                     <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa totam facere animi earum? Dolorum, unde veniam, quas sunt, iusto sapiente voluptates quia alias rem odio recusandae laudantium minima ratione aliquid dignissimos sit dolor maxime ipsam culpa obcaecati voluptas!</p>
                 </div>
-                <div class="top-right flex justify-center ">
-                    <img class="height" src="./images/dumbbell-7610150.svg" alt="">
-                </div>
+                
             </div>
         </section>
         
-        <section class="section2  section ">
+        <section class="section2 con2  section ">
             <h1 class="text-center my-2">Pricing</h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis quidem ducimus fugiat, sint obcaecati asperiores porro eligendi veniam modi odio quis, dolore atque iure, repellat expedita autem! Provident aliquid placeat praesentium assumenda, dolore voluptas. Rem?</p>
             <div class="boxes flex justify-center flex-row">
@@ -58,7 +73,8 @@
                     <ul>
                         <li class="hilighted">₹300/month</li>
                         <li>3 Hours Daily</li>
-                        
+                        <li>--  </li>
+                        <li> -- </li>
                         <li>Help Center Access</li>
                         <li><button class="btn">SignUp Now</button></li>
                     </ul>
@@ -90,7 +106,7 @@
             </div>
         </section>
         
-        <section class="section3 section ">
+        <section class="section3 con3 section ">
             <h1 class="text-center my-2">Compare Plans</h1>
             <div class="container table">
             <table class="  text-center">
@@ -154,10 +170,28 @@ Copyright &copy FitnessPro | All rights reserved
 </div>
 </body>
 <script>
-// Add this class when you want to start the fade-out
+ const menu = document.querySelector('.section0')
+ const button = document.querySelector('.menu')
+ const content1 = document.querySelector('.con1')
+ const content2 = document.querySelector('.con2')
+ const content3 = document.querySelector('.con3')
+  
+
+  
+ button.addEventListener('click',()=>{
+
+  menu.classList.toggle('visible')
+  content1.classList.toggle('invisible')
+  content2.classList.toggle('invisible')
+  content3.classList.toggle('invisible')
+  
+})
+
+
+
+  
 video.classList.add('fading');
 
 </script>
-
 
 </html>
