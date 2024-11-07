@@ -12,9 +12,9 @@
 <body>
   <main class="min-h-screen  ">
    
-    <div id="transitionImage" class="transition-image" style="display:none;">
+    <!-- <div id="transitionImage" class="transition-image" style="display:none;">
       <img src="./images/dumbbell-7610150.svg" alt="Transition Image">
-  </div>
+  </div> -->
     <div class="container mx-auto">
     <header>
       <div class="menu">
@@ -35,7 +35,7 @@
         </nav>
     </header>
         
-    <section class="section0">
+    <section class="section0 hidden">
       <ul class="navbar flex flex-col item-center">
         <!-- <div class="exit">
           <img src="images/cross-icon-29.jpg" width="40px" height="40px" alt="">
@@ -170,22 +170,72 @@ Copyright &copy FitnessPro | All rights reserved
 </div>
 </body>
 <script>
- const menu = document.querySelector('.section0')
- const button = document.querySelector('.menu')
- const content1 = document.querySelector('.con1')
- const content2 = document.querySelector('.con2')
- const content3 = document.querySelector('.con3')
+//  const menu = document.querySelector('.section0')
+//  const button = document.querySelector('.menu')
+//  const content1 = document.querySelector('.con1')
+//  const content2 = document.querySelector('.con2')
+//  const content3 = document.querySelector('.con3')
   
 
   
- button.addEventListener('click',()=>{
+//  button.addEventListener('click',()=>{
 
-  menu.classList.toggle('visible')
-  content1.classList.toggle('invisible')
-  content2.classList.toggle('invisible')
-  content3.classList.toggle('invisible')
+//   menu.classList.toggle('visible')
+//   content1.classList.toggle('invisible')
+//   content2.classList.toggle('invisible')
+//   content3.classList.toggle('invisible')
   
-})
+// })
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuButton = document.querySelector('.menu-icon');
+  const section0 = document.querySelector('.section0');
+
+  menuButton.addEventListener('click', function () {
+    menuButton.classList.toggle('active');
+    
+    if (section0.classList.contains('hidden')) {
+      section0.classList.remove('hidden');
+      setTimeout(() => {
+        section0.classList.add('visible');
+      }, 500); // Match this timeout with the CSS transition duration
+    } else {
+      section0.classList.remove('visible');
+      setTimeout(() => {
+        section0.classList.add('hidden');
+      }, 10); // Small delay to ensure transition occurs
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll('.section0, .section1, .section2, .section3');
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        if (entry.target.classList.contains('section2')) {
+          entry.target.classList.remove('fadeOut');
+        }
+      } else {
+        if (entry.target.classList.contains('section2')) {
+          entry.target.classList.add('fadeOut');
+        }
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+});
 
 
 

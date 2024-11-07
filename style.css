@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 *{
     margin: 0;
@@ -79,9 +80,11 @@ header nav {
     background-image: linear-gradient(rgb(112, 11, 70), rgb(73, 8, 122))
     
 }
-.section0 .navbar li{
+.section0 .navbar li , .section0 .navbar .btn{
 padding: 15px;
 margin: 10px;
+font-family: Delius;
+font-weight: 600;
 }
 .section1{
    
@@ -307,9 +310,7 @@ footer{
 
 .menu {
     position: absolute;
-    top: 20px;    /* Adjust this value for desired distance from top */
-    right: 10px;  /* Adjust this value for desired distance from right */
-    z-index: 10;  /* Ensures menu stays above other elements */
+    top: 20px;    
 }
 
 .menu-icon {
@@ -317,22 +318,73 @@ footer{
     height: 50px;
     cursor: pointer;
 }
-
+.menu-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-icon.active {
+    transform: rotate(90deg);
+  }
 .exit{
     position: absolute;
-    top: 120px;    /* Adjust this value for desired distance from top */
-    right: 20px;  /* Adjust this value for desired distance from right */
+    top: 120px;   
     z-index: 10;  
 }
 
 
-.section0{
+/* .section0{
     display: none;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  
    }
 .visible{
     display: block;
+    opacity: 1;
+  transform: translateY(0);
+
+} */
+
+/* Initial hidden state for section0 */
+.hidden {
+
+    opacity: 0;
+    transform: translateX(-777px);
+    transform: scale(.3);
+    display: none;
+
     
-}
+  }
+
+  .hidden .navbar{
+   
+  }
+  
+  /* Visible state for section0 */
+  .visible {
+    display: block;
+    
+  }
+
+  .visible .navbar{
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateX(20px);
+    transform: scale(1.1);
+    /* transform: translate3d(45px); */
+  }
+  
+  /* Animation for the menu button */
+  .menu-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-icon.active {
+    transform: rotate(180deg);
+  }
+
+
 
 
 .invisible{
@@ -417,6 +469,70 @@ footer{
     text-align: center;
 }
 
+
+
+.section1, .section2, .section3 {
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+ 
+  
+  .section1.visible {
+    animation: fadeIn 2s ease-in-out forwards;
+  }
+  
+  .section2.visible {
+    animation: slideIn 2s linear forwards;
+    
+  }
+  
+  .section3.visible {
+    animation: zoomIn 3s linear forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      
+    }
+    to {
+      opacity: 0;
+      scale: 2;
+      
+    }
+  }
+  
 
 }
 
