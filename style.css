@@ -76,16 +76,21 @@ header nav {
 
 .section0 {
     height: 73vh;
-    font-size: 2rem;
-    background-image: linear-gradient(rgb(112, 11, 70), rgb(73, 8, 122))
+    font-size: 1rem;
+    background-image: linear-gradient(rgb(69, 6, 43), rgb(52, 5, 88))
     
 }
 .section0 .navbar li , .section0 .navbar .btn{
 padding: 15px;
-margin: 10px;
+margin-bottom: 25px;
 font-family: Delius;
-font-weight: 600;
+font-weight: 600;}
+.section0 .navbar .btn{
+
+    margin-top: 70px;
 }
+
+
 .section1{
    
     position: relative;
