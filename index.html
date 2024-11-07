@@ -172,18 +172,16 @@ Copyright &copy FitnessPro | All rights reserved
 <script>
 //  const menu = document.querySelector('.section0')
 //  const button = document.querySelector('.menu')
-//  const content1 = document.querySelector('.con1')
-//  const content2 = document.querySelector('.con2')
-//  const content3 = document.querySelector('.con3')
+ const content1 = document.querySelector('.con1')
+ const content2 = document.querySelector('.con2')
+ const content3 = document.querySelector('.con3')
   
 
   
 //  button.addEventListener('click',()=>{
 
 //   menu.classList.toggle('visible')
-//   content1.classList.toggle('invisible')
-//   content2.classList.toggle('invisible')
-//   content3.classList.toggle('invisible')
+
   
 // })
 
@@ -193,7 +191,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   menuButton.addEventListener('click', function () {
     menuButton.classList.toggle('active');
-    
+    content1.classList.toggle('invisible')
+  content2.classList.toggle('invisible')
+  content3.classList.toggle('invisible')
     if (section0.classList.contains('hidden')) {
       section0.classList.remove('hidden');
       setTimeout(() => {
