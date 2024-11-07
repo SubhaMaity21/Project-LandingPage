@@ -310,7 +310,9 @@ footer{
 
 .menu {
     position: absolute;
-    top: 20px;    
+    top: 20px;
+    right: 10px;  
+    z-index: 10;  
 }
 
 .menu-icon {
@@ -325,11 +327,6 @@ footer{
   .menu-icon.active {
     transform: rotate(90deg);
   }
-.exit{
-    position: absolute;
-    top: 120px;   
-    z-index: 10;  
-}
 
 
 /* .section0{
